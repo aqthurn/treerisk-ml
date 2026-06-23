@@ -1,0 +1,39 @@
+📋 DESCRIÇÃO DOS 5 SCRIPTS QUE VÃO FICAR
+
+1. preparar_dados.py
+# O que faz: Divide as imagens em treino (70%), validação (20%) e teste (10%)
+# Quando usar: SEMPRE que adicionar novas imagens ao dataset
+# Como usar: python scripts/preparar_dados.py
+
+2. verificar_estrutura_completa.py
+# O que faz: Mostra quantas imagens e labels tem em cada pasta
+# Quando usar: Para diagnosticar problemas com o dataset
+# Como usar: python scripts/verificar_estrutura_completa.py
+
+3. treinar_otimizado.py
+# O que faz: TREINA O MODELO com as configurações otimizadas
+# Quando usar: SEMPRE que adicionar novas imagens (re-treinar)
+# Como usar: python scripts/treinar_otimizado.py
+
+4. testar_imagem.py
+# O que faz: Testa o modelo em uma imagem específica
+# Quando usar: Para ver como o modelo se comporta em novas imagens
+# Como usar: python scripts/testar_imagem.py
+
+5. deteccao_webcam.py
+# O que faz: Detecção em tempo real usando a webcam
+# Quando usar: Para demonstrações ou testes ao vivo
+# Como usar: python scripts/deteccao_webcam.py
+
+🔄 FLUXO DE TRABALHO COM OS 5 SCRIPTS
+1. Adicionar novas imagens
+   ↓
+2. python scripts/preparar_dados.py    # Divide dataset
+   ↓
+3. python scripts/verificar_estrutura_completa.py  # Confere
+   ↓
+4. python scripts/treinar_otimizado.py  # Re-treina modelo
+   ↓
+5. python scripts/testar_imagem.py      # Testa resultado
+   ↓
+6. python scripts/deteccao_webcam.py    # Demonstra ao vivo

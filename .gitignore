@@ -1,0 +1,41 @@
+# Ambientes e dependencias locais
+venv_arvores/
+venv/
+venv_*/
+env/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+# Ferramentas e caches do Python
+// Ferramentas e caches do Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+# Arquivos temporarios do editor/OS
+// Arquivos temporarios do editor/OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Saidas geradas pelo treinamento e testes
+// Saidas geradas pelo treinamento e testes
+runs/
+resultados/
+modelos/*.pt
+*.pt
+*.onnx
+*.engine
+*.tflite
+# Logs e arquivos temporarios
+// Logs e arquivos temporarios
+*.log
+*.tmp
+*.bak
+# Jupyter
+// Jupyter
+.ipynb_checkpoints/
+CLAUDE.md

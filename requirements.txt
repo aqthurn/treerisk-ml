@@ -1,0 +1,20 @@
+# Tree Risk AI — dependências Python
+#
+# IMPORTANTE: o venv DEVE ficar fora da pasta Downloads.
+# O Windows (Smart App Control) bloqueia DLLs baixadas dentro de Downloads.
+#
+# Configuração inicial (executar UMA VEZ):
+#
+#   py -3.14 -m venv C:\Users\Arthur\Envs\tree_risk_ai
+#   C:\Users\Arthur\Envs\tree_risk_ai\Scripts\pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#   C:\Users\Arthur\Envs\tree_risk_ai\Scripts\pip install -r requirements.txt
+#
+# Venv ativo em: C:\Users\Arthur\Envs\tree_risk_ai\
+
+ultralytics==8.4.75
+opencv-python==4.13.0.92
+pandas==3.0.3
+matplotlib==3.11.0
+scikit-learn==1.9.0
+pillow==12.2.0
+# torch e torchvision instalados separadamente (índice CPU acima)

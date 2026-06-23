@@ -1,0 +1,10 @@
+# Configuração do dataset para treinamento YOLOv8
+# path é relativo à localização deste arquivo (configs/)
+path: ../dataset
+
+train: images/treino
+val:   images/validacao
+test:  images/teste
+
+nc: 8
+names: ['cupim', 'poda', 'cavidade', 'raiz_exposta', 'decomposicao', 'fungo', 'levantamento_pavimento', 'inclinacao']
