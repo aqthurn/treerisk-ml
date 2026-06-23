@@ -1,8 +1,8 @@
-import sys, os
+import sys, os, yaml
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from config import CLASSES, DATA_YAML, MODELS_DIR, RESULTS_DIR, MODEL_PATH, RUN_NAME
+from config import CLASSES, DATA_YAML, MODELS_DIR, RESULTS_DIR, MODEL_PATH, RUN_NAME, ROOT, IMAGES_DIR
 
 from ultralytics import YOLO
 import torch
@@ -43,6 +43,20 @@ if train_count == 0:
 
 print("\nCarregando modelo YOLOv8n (pre-treinado)...")
 model = YOLO('yolov8n.pt')
+
+# Regera data.yaml com caminho absoluto para funcionar em qualquer maquina
+data_config = {
+    'path': str(ROOT / 'dataset'),
+    'train': 'images/treino',
+    'val':   'images/validacao',
+    'test':  'images/teste',
+    'nc':    len(CLASSES),
+    'names': list(CLASSES),
+}
+DATA_YAML.parent.mkdir(parents=True, exist_ok=True)
+with open(DATA_YAML, 'w', encoding='utf-8') as f:
+    yaml.dump(data_config, f, default_flow_style=False, allow_unicode=True)
+print(f"data.yaml atualizado: {DATA_YAML}")
 
 print("\nIniciando treinamento...")
 print("-" * 60)

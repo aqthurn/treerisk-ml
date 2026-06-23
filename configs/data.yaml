@@ -1,10 +1,10 @@
-# Configuração do dataset para treinamento YOLOv8
-# path é relativo à localização deste arquivo (configs/)
-path: ../dataset
-
+names:
+- cavidade
+- levantamento_pavimento
+- poda
+- raiz_exposta
+nc: 4
+path: C:\Users\n1-arthur.oliveira\Documents\code\treerisk-ml\ml\projeto_arvores\dataset
+test: images/teste
 train: images/treino
-val:   images/validacao
-test:  images/teste
-
-nc: 8
-names: ['cupim', 'poda', 'cavidade', 'raiz_exposta', 'decomposicao', 'fungo', 'levantamento_pavimento', 'inclinacao']
+val: images/validacao

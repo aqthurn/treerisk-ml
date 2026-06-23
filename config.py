@@ -8,14 +8,10 @@ if hasattr(sys.stdout, 'reconfigure'):
 ROOT = Path(__file__).resolve().parent
 
 CLASSES = [
-    'cupim',
-    'poda',
     'cavidade',
-    'raiz_exposta',
-    'decomposicao',
-    'fungo',
     'levantamento_pavimento',
-    'inclinacao',
+    'poda',
+    'raiz_exposta',
 ]
 
 IMAGES_DIR  = ROOT / 'dataset' / 'images'
