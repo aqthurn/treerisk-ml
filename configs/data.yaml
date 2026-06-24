@@ -4,7 +4,7 @@ names:
 - poda
 - raiz_exposta
 nc: 4
-path: C:\Users\n1-arthur.oliveira\Documents\code\treerisk-ml\ml\projeto_arvores\dataset
+path: C:\Users\Arthur\Documents\code\treerisk-ml\dataset
 test: images/teste
 train: images/treino
 val: images/validacao

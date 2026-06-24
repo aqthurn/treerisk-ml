@@ -64,7 +64,8 @@ axes[0, 2].set_ylabel('mAP')
 axes[0, 2].legend()
 axes[0, 2].grid(True, alpha=0.3)
 
-axes[1, 0].plot(df['epoch'], df['x/lr0'], label='Learning Rate', linewidth=2, color='green')
+lr_col = 'lr/pg0' if 'lr/pg0' in df.columns else 'x/lr0'
+axes[1, 0].plot(df['epoch'], df[lr_col], label='Learning Rate', linewidth=2, color='green')
 axes[1, 0].set_title('Taxa de Aprendizado')
 axes[1, 0].set_xlabel('Epoca')
 axes[1, 0].set_ylabel('LR')

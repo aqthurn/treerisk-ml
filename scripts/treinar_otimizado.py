@@ -1,4 +1,4 @@
-import sys, os, yaml
+import sys, os, yaml, argparse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -7,15 +7,32 @@ from config import CLASSES, DATA_YAML, MODELS_DIR, RESULTS_DIR, MODEL_PATH, RUN_
 from ultralytics import YOLO
 import torch
 
+parser = argparse.ArgumentParser(description='Treinar modelo YOLOv8')
+parser.add_argument('--gpu', action='store_true', help='Usar GPU CUDA se disponivel')
+args = parser.parse_args()
+
 print("=" * 60)
 print("TREINAMENTO - SAUDE DE ARVORES")
 print("=" * 60)
 
-print(f"\nGPU disponivel: {torch.cuda.is_available()}")
-if torch.cuda.is_available():
-    print(f"GPU: {torch.cuda.get_device_name(0)}")
+if args.gpu and torch.cuda.is_available():
+    device = 0
+    batch = 16
+    workers = 4
+    amp = True
+    print(f"\nUsando GPU (CUDA): {torch.cuda.get_device_name(0)}")
+elif args.gpu:
+    print("\nAVISO: --gpu solicitado mas CUDA nao esta disponivel. Usando CPU.")
+    device = 'cpu'
+    batch = 4
+    workers = 2
+    amp = True
 else:
-    print("Usando CPU (sera mais lento, mas funciona!)")
+    device = 'cpu'
+    batch = 4
+    workers = 2
+    amp = True
+    print(f"\nUsando CPU")
 
 
 def contar_imagens(subpasta):
@@ -67,9 +84,10 @@ try:
 
         epochs=150,
         imgsz=640,
-        batch=4,
-        device='cpu',
-        workers=2,
+        batch=batch,
+        device=device,
+        workers=workers,
+        amp=amp,
 
         patience=50,
 
