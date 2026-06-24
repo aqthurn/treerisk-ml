@@ -82,7 +82,7 @@ try:
     results = model.train(
         data=str(DATA_YAML),
 
-        epochs=150,
+        epochs=260,
         imgsz=640,
         batch=batch,
         device=device,
