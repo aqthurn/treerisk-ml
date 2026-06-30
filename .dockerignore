@@ -1,0 +1,9 @@
+dataset/
+modelos/
+resultados/
+runs/
+*.pt
+.venv/
+__pycache__/
+*.cache
+.git/
