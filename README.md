@@ -71,7 +71,7 @@ treerisk-ml/                  ← rode os comandos AQUI
   ```
 - Imagem sem defeito pode ter um `.txt` vazio (vira "imagem de fundo").
 
-### ⚠️ ORDEM DAS CLASSES — o erro que corrompe o dataset em silêncio
+### ORDEM DAS CLASSES — SEGUIR A RISCA
 Ao anotar (ex: no makesense.ai), a ordem das classes **TEM** que ser exatamente:
 
 | índice | classe |
